@@ -1,0 +1,120 @@
+<style>
+
+    h1{
+        font-size: 14pt;
+    }
+
+    select{
+        background-color: #1d1d3d;
+        padding: 0.5em;
+        color: #fff;
+        border: #fff solid 1px;
+        position:static;
+    }
+
+    input[type=text]{
+        width: 200px;
+        box-sizing:border-box;
+        padding: 1em;
+        background: none;
+        border: #f30564 solid 1px;
+        color: #fff;
+        border-radius: 10px;
+    }
+
+    button{
+        background: none;
+        border: none;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+
+    input::placeholder{
+        color: #fff;
+    }
+
+    #janela-modular{
+        
+    }
+
+    #cabecalho-janela{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0.5em;
+    }
+
+    #titulo-janela{
+        color: #f30564;
+        text-align: right;
+        float: right;
+        margin-right: 0.5em;
+    }
+
+    #conteudo-janela{
+        color: #fff;
+        box-sizing: content-box;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+    }
+
+</style>
+
+<script>
+
+    let selecaoJanela
+
+    function escolherJanela(){
+        selecaoJanela = document.getElementById("selecao-janela").value
+        trocarJanela(selecaoJanela)
+    }
+
+    function trocarJanela(janelaAtual){
+
+        switch(){
+            case 'alunos':
+                document.getElementById('conteudo-janela').innerHTML=toString(janelaAtual)
+                break
+            case 'turmas':
+                document.getElementById('conteudo-janela').innerHTML=toString(janelaAtual)
+                break
+        }
+    }
+
+</script>
+
+<div id="janela-modular">
+    <div id="cabecalho-janela" onchange="escolherJanela()">
+
+        <input type="text" id="busca" placeholder="Pesquisar...">
+    
+        <div>
+            <!-- Seletor de janela -->
+            <select name="janela" id="selecao-janela">
+                <option value="alunos">Alunos</option>
+                <option value="turmas">Turmas</option>
+                <option value="respons">Responsaveis</option>
+                <option value="notas">Notas</option>
+                <option value="matriculas">Matrículas</option>
+                <option value="vendas">Vendas</option>
+                <option value="trabalhos">Trabalhos</option>
+                <option value="cursos">Cursos</option>
+                <option value="usuarios">Usuários</option>
+            </select>
+            <!-- Fim do seletor -->
+
+            <button title="Novo" class="icones"><img src="../src/icone_novo.png"></button>
+        </div>
+    </div>
+
+    <h1 id="titulo-janela">Alunos</h1>
+    
+    <div id="conteudo-janela">
+        <p>Teste</p>
+        <p>Teste</p>
+        <p>Teste</p>
+    </div>
+</div>

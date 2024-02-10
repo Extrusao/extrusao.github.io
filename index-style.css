@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap');
+@keyframes animacao-botao-menu{
+    from{
+        box-shadow: 0 0 0px #000;
+        margin: 0 0 0 0;
+    }
+    to{
+        font-size: 14pt;
+        box-shadow: -0.5em 0.5em 10px #000;
+        margin: 0 0 0.5em 0.5em;
+    }
+}
+
+@keyframes animacao-botao-login{
+    from{
+        text-shadow: 0 0 0px #000;
+        margin: 0 0 0 0;
+    }
+    to{
+        font-size: 20pt;
+        text-shadow: 0.5em 0.5em 15px #000;
+        margin: 0 0 0.5em 0.5em;
+    }
+}
+
+html{
+    width: inherit;
+    height: inherit;
+}
+
+body{
+    margin: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: #1d1d3d;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Oxanium', sans-serif;
+    color: #f45a4e;
+}
+
+header{
+    position: relative;
+    width: 40%;
+    margin: 5em auto 3em auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#envelope{
+    width: 40%;
+    min-height: 60vh;
+    margin: auto;
+    position: relative;
+}
+
+#logo{
+    max-height: 50px;
+}
+
+#menu button{
+    background-image: linear-gradient(to right,#f45a4e,#FFAA88);
+    border: none;
+    color: #1d1d3d;
+    cursor: pointer;
+    font-size: 10pt;
+    transition: font-size 1s;
+}
+
+#menu{
+    position: absolute;
+    max-width: 100px;
+    left: 0;
+    bottom: 0;
+    margin: 1em;
+    transform: skewY(10deg) rotate(-10deg);
+}
+
+button{
+    font-family: 'Oxanium', sans-serif;
+}
+
+button:hover{
+    animation-name: animacao-botao-menu;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    transition: ease-in-out;
+}
+
+#area-logada{
+    background: none;
+    position: absolute;
+    border: none;
+    right: 0;
+    color: #f45a4e;
+    cursor: pointer;
+    font-size: 16pt;
+    font-weight: 700;
+}
+
+#area-logada:hover{
+    animation-name: animacao-botao-login;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    transition: ease-in-out;
+}
+
+#pagina{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#carregamento{
+    width: 100%;
+    height: 50vh;
+    margin: auto;
+}

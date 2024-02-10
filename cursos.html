@@ -1,0 +1,141 @@
+<style>
+
+    .seletor{
+        margin: 1em auto;
+        text-align: center;
+    }
+
+    .slide{
+        width: 100%;
+    }
+
+    /* Slideshow container */
+
+    /* Hide the images by default */
+    .cursos {
+        display: none;
+    }
+
+    /* proximo & anteriorious buttons */
+    .anterior, .proximo {
+        cursor: pointer;
+        padding: 0 0.3em;
+        color: #f45a4e;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        user-select: none;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .anterior:hover, .proximo:hover {
+        color: #1d1d3d;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        background-color: #f45a4e;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        margin: 0 0.3em;
+        border: #f45a4e 1px solid;
+    }
+
+    .active, .dot:hover {
+        background-color: #1d1d3d;
+        border: #f45a4e 1px solid;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 0.3s;
+    }
+
+    @keyframes fade {
+        from {opacity: 0}
+        to {opacity: 1}
+    }
+
+    </style>
+
+<script src="index.js"></script>
+<script>
+
+    let indiceSlide = 1;
+    slideshow(indiceSlide);
+
+    // proximo/anteriorious controls
+    function avancarSlides(n) {
+    slideshow(indiceSlide += n);
+    }
+
+    // Thumbnail image controls
+    function slideAtual(n) {
+    slideshow(indiceSlide = n);
+    }
+
+    function slideshow(n) {
+        let i;
+
+        let slides = document.getElementsByClassName("cursos");
+
+        let dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) {
+            indiceSlide = 1
+        }
+
+        if (n < 1) {
+            indiceSlide = slides.length
+        }
+
+        for (i = 0; i < slides.length; i++)
+        {
+            slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++)
+        {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[indiceSlide-1].style.display = "block";
+
+        dots[indiceSlide-1].className += " active";
+    }
+</script>
+
+<div id="pagina" class="flutua" data-value="1">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="cursos fade">
+        <img src="src/linguagem-fotografica/aprendendo01.jpg" class="slide">
+    </div>
+
+    <div class="cursos fade">
+        <img src="src/linguagem-fotografica/coworking04.jpg" class="slide">
+    </div>
+
+    <div class="cursos fade">
+        <img src="src/linguagem-fotografica/gamer01.jpg" class="slide">
+    </div>
+
+    <div class="cursos fade">
+        <img src="src/linguagem-fotografica/coworking07.jpg" class="slide">
+    </div>
+
+
+    <div class="seletor">
+        <a class="anterior" onclick="avancarSlides(-1)">&#10094;</a>
+        <span class="dot" onclick="slideAtual(1)"></span>
+        <span class="dot" onclick="slideAtual(2)"></span>
+        <span class="dot" onclick="slideAtual(3)"></span>
+        <span class="dot" onclick="slideAtual(4)"></span>
+        <a class="proximo" onclick="avancarSlides(1)">&#10095;</a>
+    </div>
+</div>

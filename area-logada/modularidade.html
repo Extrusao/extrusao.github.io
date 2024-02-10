@@ -1,0 +1,69 @@
+<style>
+
+    button{
+        margin: 0.5em;
+        background: none;
+        border: none;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+
+    #Janela-Wrapper{
+        width: 500px;
+        height: 500px;
+        background-color: #1d1d3d;
+        box-sizing: content-box;
+        margin: 0 0.5em;
+        border: solid 1px #f30564;
+    }
+
+    #Janela{
+        width: 100%;
+        height: 100%;
+    }
+
+    #wrapper{
+        display: flex;
+    }
+
+    #botao-fechar{
+        float: right;
+    }
+
+</style>
+
+
+<script>
+
+    function criarJanelaInicial(){
+        document.getElementById("wrapper").innerHTML= "<div id='Janela-Wrapper'> \n\
+            <button id='botao-fechar'><img src='../src/icone_remover.png' alt='Fechar Janela'></button> \n\
+            <object data='janela.html' type='text/html' id='Janela'></object> \n\
+            </div>"
+    }
+
+
+
+    function criarNovaJanela(){
+        document.getElementById('Janela-Wrapper').insertAdjacentHTML("afterend",
+            "<div id='Janela-Wrapper'> \n\
+            <button id='botao-fechar'><img src='../src/icone_remover.png' alt='Fechar Janela'></button> \n\
+            <object data='janela.html' type='text/html' id='Janela'></object> \n\
+            </div>"
+        )
+    }
+
+    function removerJanela(){
+        this.remove()
+    }
+
+</script>
+<body onload="criarJanelaInicial()">
+
+    <button title="Nova Janela" onclick="criarNovaJanela()"><img src="../src/icone_novo.png"></button>
+    <div id="wrapper">
+    </div>
+    
+</body>

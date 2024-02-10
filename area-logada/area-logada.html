@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÁREA-LOGADA</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&family=Staatliches&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <style>
+        header{
+            background: #1d1d3d url("../src/grafismos-bg01.png");
+            box-sizing: content-box;
+            padding: 0.5em;
+        }
+
+        h1{
+            color: white;
+        }
+
+        form{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input{
+            font-family: 'Raleway', sans-serif;
+            color: #1d1d3d;
+            box-sizing: content-box;
+            padding: 0.5em;
+        }
+
+        input[type=text]::placeholder{
+            color: #1d1d3d;
+            opacity: 0.5;
+        }
+
+        input[type=submit]{
+            width: 100px;
+        }
+
+        button{
+            background: none;
+            border: none;
+            font-family: 'Staatliches', cursive;
+            font-size: 18pt;
+            color: white;
+            float: right;
+        }
+
+        button:hover{
+           cursor: pointer;
+            transform:translate(10px,3px);
+            box-shadow: -10px -3px #1d1d3d;
+            background-color: #f45a4e;
+        }
+
+    </style>
+
+    <header>
+        <div class="wrapper">
+            <h1>SUA ÁREA LOGADA</h1>
+            <button><a href="../index.html">Voltar</a></button>
+        </div>
+    </header>
+
+    <form action="" method="POST" class="wrapper">
+        <input type="text" placeholder="login">
+        <input type="password" placeholder="senha">
+        <input type="submit">
+    </form>
+    
+</body>
+</html>
